@@ -4,32 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Virtual Pet</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>
-    <img src="PiskelArt/Health.gif" width="40px">
-    <progress id="health" value="100" max="100">Health</progress>
+<h1 id="appContainer">
 
-    <img src="PiskelArt/Thirst.gif" width="40px">
-    <progress id="drink" value="100" max="100">Drink</progress>
+    <!-- Start Menu -->
+    <div id="overlay">
+        <h5 id="enterPetTitle">Enter Pet Name</h5>
+        <div id="nameInputBoxContainer">
+            <input id="name" type="text">
+        </div>
+        <div id ="lifeSpan"></div>
+        <button id ="playAgain">Play Again</button>
+    </div>
 
-    <img src="PiskelArt/Hunger.gif" width="40px">
-    <progress id="hunger" value="100" max="100">Play</progress>
-    
-    <img src="PiskelArt/Happiness.gif" width="40px">
-    <progress id="happiness" value="100" max="100">Play</progress>
 
-    <img src="PiskelArt/Energy.gif" width="40px">
-    <progress id="Play" value="100" max="100">Play</progress>
+    <div id="mainGame">
 
-<hr>
+        <p id="petNameTitle">Pet Name (placeholder)</p>
+        <p id="petTypeTitle">Pet Type (placeholder)</p>
 
-<button id="eatButton">Eat</button>
-<button id="drinkButton">Drink</button>
-<button id="playButton">Play</button>
+        <div class="barAndIcon">
+            <img src="PiskelArt/Health.gif" width="40px">
+            <progress id="health" value="100" max="100">Health</progress>
+        </div>
 
-<div class="overlay"><h1>Please enter Pet Name to start</h1></div>
+        <div class="barAndIcon">
+            <img src="PiskelArt/Thirst.gif" width="40px">
+            <progress id="drink" value="100" max="100">Drink</progress>
+        </div>
 
+        <div class="barAndIcon">
+            <img src="PiskelArt/Hunger.gif" width="40px">
+            <progress id="energy" value="100" max="100">Play</progress>
+        </div>
+
+        <div class="barAndIcon">
+            <img src="PiskelArt/Happiness.gif" width="40px">
+            <progress id="happiness" value="100" max="100">Play</progress>
+        </div>
+
+        <div class="barAndIcon">
+            <img src="PiskelArt/Energy.gif" width="40px">
+            <progress id="game" value="100" max="100">Play</progress>
+        </div>
+
+        <div id="buttonsContainer">
+            <button id="eatBtn">Eat</button>
+            <button id="drinkBtn">Drink</button>
+            <button id="gameBtn">Play</button>
+        </div>
+
+        <img id="animalPicture" src="PiskelArt\Cat.gif" width="50%">
+
+        <div id="animalStatusContainer">
+            <p id="animalStatusTitle">Animal Status:</p>
+            <p id="animalStatusText">Happy(placeholder)</p>
+        </div>
+    </div>
 </h1>
+
+<script src="script.js"></script>
 </body>
 </html>
