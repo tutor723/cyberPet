@@ -29,9 +29,6 @@ const d = new Date();
 
     }
 
- 
-
-
 
     else if ( document.getElementById("energy").value === 0){
         console.log(document.getElementById("health").value)
