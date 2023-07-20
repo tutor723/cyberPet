@@ -1,7 +1,7 @@
 let health = document.getElementById("health");
-   let drink = document.getElementById("drink");
-   let energy = document.getElementById("energy");
-   let happiness = document.getElementById("happiness");
+let drink = document.getElementById("drink");
+let energy = document.getElementById("energy");
+let happiness = document.getElementById("happiness");
    let game = document.getElementById("game");
    let name = document.getElementById("name");
 
@@ -13,11 +13,12 @@ let happiness1 = happiness.value;
 let energy1 = energy.value;
 const d = new Date();
     let time1 = d.getTime();
-   function start(){setTimeout(function(){
+  
+    function start(){setTimeout(function(){
 
- 
+     // document.getElementById('lifeSpan').style.visibility = "hidden"
     
-    if(  document.getElementById("health").value != 0  ){
+    if(  document.getElementById("health").value != 0 ){
   if(  document.getElementById("energy").value != 0  ){
    
         document.getElementById("drink").value -= 2;
@@ -38,7 +39,9 @@ const d = new Date();
          
         let time = new Date(new Date().getTime() - time1)
         document.getElementById('lifeSpan').textContent = `They lived for ${time.getMinutes()} minutes ${('0' + time.getSeconds()).slice(-2)} seconds`
-       
+        setTimeout(function(){
+         document.getElementById("lifeSpan").innerText = '';
+     }, 5000);
      }
      petDied();
         return;  
@@ -53,8 +56,10 @@ const d = new Date();
         
          
          let time = new Date(new Date().getTime() - time1)
-         document.getElementById('lifeSpan').textContent = `They lived for ${time.getMinutes()} minutes ${('0' + time.getSeconds()).slice(-2)} seconds`
-        
+         document.getElementById('lifeSpan').innerText = `They lived for ${time.getMinutes()} minutes ${('0' + time.getSeconds()).slice(-2)} seconds`
+         setTimeout(function(){
+            document.getElementById("lifeSpan").innerText = '';
+        }, 5000);
      }
      petDied();
         return;  
@@ -63,7 +68,7 @@ const d = new Date();
            start();
          }, 1000);
      }
-  start()
+  
   
 
 class Cyberpet {
@@ -146,3 +151,41 @@ pet.game(name)
 })
 
 
+
+document.getElementById('start').addEventListener('click', function() {
+  
+   document.getElementById('box').style.visibility="visible";
+   
+   setTimeout(function() {
+     
+   document.getElementById("drink").value = 100 ;
+   document.getElementById("health").value = 100 ;
+   document.getElementById("game").value = 100 ;
+   document.getElementById("happiness").value = 100 ;
+   document.getElementById("energy").value = 100 ;
+  
+   start();
+
+  
+    
+     
+   
+   
+  
+},500)
+
+})
+
+
+document.getElementById('enterName').addEventListener('click', function() {
+   
+   document.getElementById("namePlease").innerText = 'Enter your name';
+   setTimeout(function(){
+      document.getElementById("namePlease").innerText = '';
+  }, 1000);
+  document.getElementById('box').style.visibility ="hidden"
+   })
+
+
+
+//document.getElementById('namePlease').style.visibility = "hidden"
