@@ -2,8 +2,11 @@ let health = document.getElementById("health");
 let drink = document.getElementById("drink");
 let energy = document.getElementById("energy");
 let happiness = document.getElementById("happiness");
-   let game = document.getElementById("game");
-   let name = document.getElementById("name");
+let game = document.getElementById("game");
+let name = document.getElementById("name");
+let dogPicture = "./PiskelArt/Dog.gif";
+let catPicture = "./PiskelArt/Cat.gif";
+let animalType = "Cat";
 
 
 let drink1 = drink.value;
@@ -150,41 +153,47 @@ pet.game(name)
 
 })
 
+document.getElementById('dogButton').addEventListener('click', function() {
+   document.getElementById("startMenuAnimalPicture").src = dogPicture;
+   document.getElementById("animalPicture").src = dogPicture;
+   animalType = "Dog";
+});
 
+document.getElementById('catButton').addEventListener('click', function() {
+   document.getElementById("startMenuAnimalPicture").src = catPicture;
+   document.getElementById("animalPicture").src = catPicture;
+   animalType = "Cat";
+});
 
 document.getElementById('start').addEventListener('click', function() {
   
-   document.getElementById('box').style.visibility="visible";
+   document.getElementById('mainGame').style.display = "flex";
+   document.getElementById('overlay').style.display = "none";
    
    setTimeout(function() {
-     
-   document.getElementById("drink").value = 100 ;
-   document.getElementById("health").value = 100 ;
-   document.getElementById("game").value = 100 ;
-   document.getElementById("happiness").value = 100 ;
-   document.getElementById("energy").value = 100 ;
+   
+   document.getElementById("petNameTitle").textContent = document.getElementById("name").value;
+   document.getElementById("petTypeTitle").textContent = animalType;
+   
+   document.getElementById("drink").value = 100;
+   document.getElementById("health").value = 100;
+   document.getElementById("game").value = 100;
+   document.getElementById("happiness").value = 100;
+   document.getElementById("energy").value = 100;
   
    start();
-
-  
-    
-     
-   
-   
-  
 },500)
+});
 
-})
 
-
-document.getElementById('enterName').addEventListener('click', function() {
+// document.getElementById('enterName').addEventListener('click', function() {
    
-   document.getElementById("namePlease").innerText = 'Enter your name';
-   setTimeout(function(){
-      document.getElementById("namePlease").innerText = '';
-  }, 1000);
-  document.getElementById('box').style.visibility ="hidden"
-   })
+//    document.getElementById("namePlease").innerText = 'Enter your name';
+//    setTimeout(function(){
+//       document.getElementById("namePlease").innerText = '';
+//   }, 1000);
+//   document.getElementById('box').style.visibility ="hidden"
+//    })
 
 
 
