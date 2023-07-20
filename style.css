@@ -16,7 +16,7 @@ body {
 /* Visible on app start */
 /* Contains the start menu */
 #overlay {
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 10%;
@@ -24,6 +24,10 @@ body {
 
 #enterPetTitle {
     margin: 0px;
+}
+
+#namePlease {
+    animation: hideAnimation 0s ease-in 2s;
 }
 
 #nameInputBoxContainer {
@@ -36,7 +40,7 @@ body {
 /* Hidden on app start */
 /* Contains the main game */
 #mainGame {
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-items: center;
     align-items: center;
@@ -50,8 +54,6 @@ body {
     margin: 0px;
     font-size: 20px;
 }
-
-
 
 /* Hidden on game start */
 .barAndIcon {
