@@ -98,7 +98,7 @@ const d = new Date();
          }, 1000);
      }
   
-     C:\Users\shukl\Downloads\cyberPet-main (1)\cyberPet-main\main.js
+    
 
 class Cyberpet {
     constructor(name) {
