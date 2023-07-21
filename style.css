@@ -69,10 +69,13 @@ body {
     justify-content: space-around;
 }
 
+#animalStatusTitle {
+    margin-right: 20px;
+}
+
 #animalStatusContainer {
     display: flex;
     font-size: 20px;
-    
 }
 
 
