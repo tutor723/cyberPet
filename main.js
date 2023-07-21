@@ -23,13 +23,23 @@ const d = new Date();
     
     if(  document.getElementById("health").value != 0 ){
   if(  document.getElementById("energy").value != 0  ){
-   
-        document.getElementById("drink").value -= 2;
-       document.getElementById("happiness").value -= 2;
-       document.getElementById("health").value -= 10;
-      document.getElementById("game").value -= 2;
-      document.getElementById("energy").value -= 7;
+   document.getElementById('eatBtn').style.visibility = "visible";
+         document.getElementById('drinkBtn').style.visibility = "visible";
+         document.getElementById('gameBtn').style.visibility = "visible";
+        document.getElementById("drink").value -= 10;
+        if(document.getElementById("energy").value <= 50 || document.getElementById("drink").value <=50){
+         if (document.getElementById("energy").value ===0  || document.getElementById("drink").value === 0)
+         {document.getElementById("health").value === 0;}
+         document.getElementById("health").value -= 20;
+        }
+       document.getElementById("happiness").value -= 5;
+       
+      document.getElementById("game").value -= 5;
+      document.getElementById("energy").value -= 10;
      console.log(document.getElementById("drink").value);
+     if(document.getElementById("health").value <= 60 || document.getElementById("energy").value <= 60){
+      document.getElementById('animalStatusText').innerText = `You are sad`
+     }
 
     }
 
@@ -40,11 +50,20 @@ const d = new Date();
         const petDied = () => {
         
          
-        let time = new Date(new Date().getTime() - time1)
-        document.getElementById('lifeSpan').textContent = `They lived for ${time.getMinutes()} minutes ${('0' + time.getSeconds()).slice(-2)} seconds`
-        setTimeout(function(){
-         document.getElementById("lifeSpan").innerText = '';
-     }, 5000);
+        
+        document.getElementById('animalStatusText').textContent = `You are die`
+        document.getElementById("drink").value = 0;
+        document.getElementById("happiness").value = 0;
+        document.getElementById("health").value = 0;
+       document.getElementById("game").value = 0;
+       document.getElementById("energy").value = 0;
+       document.getElementById('animalStatusText').innerText = `You are die`
+
+       document.getElementById('eatBtn').style.visibility = "hidden";
+       document.getElementById('drinkBtn').style.visibility = "hidden";
+         document.getElementById('gameBtn').style.visibility = "hidden";
+       
+       return;
      }
      petDied();
         return;  
@@ -58,11 +77,18 @@ const d = new Date();
         const petDied = () => {
         
          
-         let time = new Date(new Date().getTime() - time1)
-         document.getElementById('lifeSpan').innerText = `They lived for ${time.getMinutes()} minutes ${('0' + time.getSeconds()).slice(-2)} seconds`
-         setTimeout(function(){
-            document.getElementById("lifeSpan").innerText = '';
-        }, 5000);
+         document.getElementById('animalStatusText').textContent = `You are die`
+         document.getElementById('eatBtn').style.visibility = "hidden";
+         document.getElementById('drinkBtn').style.visibility = "hidden";
+         document.getElementById('gameBtn').style.visibility = "hidden";
+         document.getElementById("drink").value = 0;
+         document.getElementById("happiness").value = 0;
+         document.getElementById("health").value = 0;
+        document.getElementById("game").value = 0;
+        document.getElementById("energy").value = 0;
+        
+         
+         return;
      }
      petDied();
         return;  
@@ -72,32 +98,35 @@ const d = new Date();
          }, 1000);
      }
   
-  
+     C:\Users\shukl\Downloads\cyberPet-main (1)\cyberPet-main\main.js
 
 class Cyberpet {
     constructor(name) {
         this.name = name;
-        //this.health = 100;
+        
        
     }
 
     drink() {
         this.name;
        drink.value += 2;
-       document.getElementById("energy").value += 2;
+       document.getElementById("energy").value += 5;
        let drink1 = drink.value
        console.log(drink1);
-        
+       
        return this;
+
         
     }
 
     eat() {
         this.name;
        health.value += 2;
-
+       document.getElementById("energy").value += 2;
        let health1 = health.value
        console.log(health1);
+     
+       
         
        return this;
         
@@ -109,7 +138,7 @@ class Cyberpet {
         this.name;
         
        game.value += 2;
-       document.getElementById("energy").value -= 2;
+       document.getElementById("energy").value -= 5;
        document.getElementById("happiness").value += 2;
      
        console.log(game1);
@@ -185,15 +214,17 @@ document.getElementById('start').addEventListener('click', function() {
 },500)
 });
 
+if(document.getElementById("health").value >= 60 || document.getElementById("energy").value >= 60 ){
 
-// document.getElementById('enterName').addEventListener('click', function() {
+   document.getElementById('animalStatusText').innerText = `Happy` 
+}
+else if(document.getElementById("health").value >= 60 )  {
    
-//    document.getElementById("namePlease").innerText = 'Enter your name';
-//    setTimeout(function(){
-//       document.getElementById("namePlease").innerText = '';
-//   }, 1000);
-//   document.getElementById('box').style.visibility ="hidden"
-//    })
+   console.log(health1)
+   document.getElementById('animalStatusText').innerText = `happy` 
+}
+
+
 
 
 
